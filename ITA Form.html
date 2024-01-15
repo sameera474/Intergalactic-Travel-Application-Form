@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intergalactic Travel Application Form</title>
+    <link rel="stylesheet" href="ITA Form.css">
+
+</head>
+    
+<body>
+    <p></p>
+    <div class="container">
+        <div id="one"><h1 class="h1-header"> INTERGALACTIC TRAVEL APPLICATION FORM</h1></div>
+
+        <div id="two"></div> 
+
+        <div id="three">
+              <!--video-->
+    <video controls width = "1650" height"1200">
+        <source src="https://v2.cdnpk.net/videvo_files/video/premium/partners0523/large_watermarked/BB_154bc3e4-acbe-4207-8c23-867ae89dcb3d_preview.mp4" type="video/mp4">        Your browse does not support the video element.
+        op: 0px;" "></video>
+        </video>
+        </div>  
+        <div id="four">
+          
+                <form action="">
+                
+                <!--Personal Information Secti.on-->
+                <label for="full name">Full Name</label><br>
+                <input id="full name" type="test" placeholder="Michal Davin" minlength="12" maxlength="20"><br>
+                
+                <label for="email">Email</label><br>
+                <input id="email" type="email" placeholder="abc@example.com"><br>
+        
+                <label for="emergency contact">Emergency Contact</label><br>
+                <input id="emergency contact" type="tel" placeholder="123-456-1234" pattern="+[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+        
+                <lable for="age">Age</lable><br>
+                <input id="age" type="number" placeholder="18-60" min="18" max="60"> <br>
+        
+                <label for="birth day">Birth Day</label><br>
+                <input id="birth day" type="date" min="1976-01-01" max="2024-01-05"><br>
+        
+                <!--Travel Preferences Section-->
+                <p></p>
+        
+                <label for="cabin class">Cabin Class</label><br>
+        
+                <label for="economy">Economy</label>
+                <input id="economy" type="radio" value="economy" name="cabin class">
+        
+                <label for="business">Business</label>
+                <input id="business" type="radio" value="business" name="cabin class">
+        
+                <label for="galactic suite">Galactic Suite</label>
+                <input id="galactic suite" type="radio" value="galactic suite" name="cabin class"><br>
+                <p></p>
+        
+                <lebel for="range slider">Range Slider</lebel><br>
+                <input id="range slider" type="range" max="100%"><br>
+                    
+                <label for="meals">Meals</label><br>
+                <select id="meals">
+                    <option value="earth cabin">Earth Cuisine</option>
+                    <option value="martian delidhts">Martian Delidhts</option>
+                    <option value="asteroid snacks">Asteroid Snacks</option>
+                </select><br>
+        
+                <p></p>
+                <!--Intergalactic Passport Upload Section-->
+        
+                <label for="id pic">Uploading a passport or intergalactic ID</label><br>   
+                <input id="id pic" type="file" accept="image/jpeg, image/png"><br>
+                <p></p>
+        
+                <!--Helth and Safety Section-->
+        
+                <label for="allergies">Any known space allergies(e.g.,Moon Dust, Solar Flares and Other)?</label>
+                <input id="allergies" type="checkbox"><br>
+        
+                <p></p>
+        
+                <label for="medical requirements">Detailing any special medical requirements</label><br>
+                <textarea id="medical requirements" name="medical requirements" rows="5" cols="50"></textarea><br>
+                <p></p>
+        
+                <!--Legal Agreements and consents Section-->
+                <lable for="terms">Do you agree to the terms and conditions?</lable>
+                <input id ="terms" type="checkbox"><br>
+        
+                  <!--Signature Pad-->
+                <style>
+                    #signature-pad {
+                      border: 1px solid #ffffff;
+                      width: 300px;
+                      height: 150px;
+                    }
+                  </style>
+                
+                <div>
+                  <canvas id="signature-pad" width="300" height="150"></canvas>
+                </div>
+                
+                <button id="clear-btn">Clear Signature</button>
+                <button id="save-btn">Save Signature</button>
+                
+                <script>
+                  document.addEventListener('DOMContentLoaded', function () {
+                    var canvas = document.getElementById('signature-pad');
+                    var ctx = canvas.getContext('2d');
+                    var drawing = false;
+                
+                    function startPosition(e) {
+                      drawing = true;
+                      draw(e);
+                    }
+                
+                    function endPosition() {
+                      drawing = false;
+                      ctx.beginPath();
+                    }
+                
+                    function draw(e) {
+                      if (!drawing) return;
+                
+                      ctx.lineWidth = 2;
+                      ctx.lineCap = 'round';
+                      ctx.strokeStyle = '#000';
+                
+                      ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+                      ctx.stroke();
+                      ctx.beginPath();
+                      ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+                    }
+                
+                    function clearCanvas() {
+                      ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    }
+                
+                    canvas.addEventListener('mousedown', startPosition);
+                    canvas.addEventListener('mouseup', endPosition);
+                    canvas.addEventListener('mousemove', draw);
+                
+                    document.getElementById('clear-btn').addEventListener('click', clearCanvas);
+                    
+                    document.getElementById('save-btn').addEventListener('click', function() {
+                      var signatureDataUrl = canvas.toDataURL();
+                        console.log(signatureDataUrl);
+                    });
+                  });
+                </script>
+             
+                <p></p>
+
+                <!--Additional Reuests and Comments Section-->
+                <button id="submit">Join</button>
+                </form>
+            </div>
+
+                <!-- footer -->
+                <div class = "social-media-icons">
+                    <a href="https://www.facebook.com/" target="_blank"><img src="./icon/fb.png" alt="fb" width"100" height="100"</img></a>
+                    <a href="https://twitter.com/" target="_blank"><img src="./icon/tw.png" alt="tw" width"100" height="100"</img></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="./icon/inst.png" alt="inst" width"100" height="100"</img></a>
+                    <a href="https://www.youtube.com/" target="_blank"><img src="./icon/yt.png" alt="yt" width"100" height="100"</img></a>
+                    <!-- Add more social media icons as needed -->
+                </div>
+        
+      </div>
+  
+
+    
+    
+    
+</body>
+</html>
