@@ -35,10 +35,11 @@
     background: linear-gradient(360deg, rgb(247, 247, 247) 0%, rgb(22, 153, 165) 35%, rgb(12, 29, 58) 100%);
     gap: 10px;
     grid-template-areas: 'header header header'
-                        'nav nav content'
+                        'nav nav nav'
                         'aside aside content'
                         'aside aside content'
                         'footer footer content';
+    flex-wrap: wrap;
 }
 
  
@@ -61,7 +62,7 @@
 
 * {
  
-    font-size: 21px; 
+    font-size: 10px; 
     font-family: nunito;
     color: rgb(255, 255, 255);
   
